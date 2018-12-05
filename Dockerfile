@@ -12,11 +12,13 @@ RUN clojure -e "(clojure-version)"
 
 WORKDIR /opt/urbest
 
-# install aws and jq
+# install cypress dependencies, aws and jq
 RUN apt-get update; \
     apt-get -y --no-install-recommends install ca-certificates \
     # Install Python3 and pip
     python3 python3-setuptools \
+    # Install cypress dependencies
+    xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 \
     # Install jq
     jq; \
     curl -sS https://bootstrap.pypa.io/get-pip.py | python; \
