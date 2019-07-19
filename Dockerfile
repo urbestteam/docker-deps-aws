@@ -24,7 +24,7 @@ RUN apt-get update; \
     curl -sS https://bootstrap.pypa.io/get-pip.py | python; \
     # Install awscli
     pip install --upgrade pip; \
-    pip install awscli
+    pip install awscli --upgrade
 
 # install nodejs
 RUN groupadd --gid 1000 node \
@@ -102,4 +102,3 @@ RUN curl -L -o /tmp/docker-${DOCKER_VERSION}.tgz https://download.docker.com/lin
     mv /tmp/docker/* /usr/bin; \
     rm /tmp/docker-${DOCKER_VERSION}.tgz; \
     rm -rf /tmp/docker
-
