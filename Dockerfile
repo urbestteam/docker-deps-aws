@@ -33,6 +33,7 @@ RUN groupadd --gid 1000 node \
 
 ENV NODE_VERSION 13.0.0
 
+# https://github.com/nodejs/docker-node/blob/910f8b1c0bdeee7bd464f0875297954bb86de9da/14/stretch/Dockerfile#L8
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
   && case "${dpkgArch##*-}" in \
     amd64) ARCH='x64';; \
@@ -75,6 +76,7 @@ RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
 
 ENV YARN_VERSION 1.22.10
 
+# https://github.com/nodejs/docker-node/blob/910f8b1c0bdeee7bd464f0875297954bb86de9da/14/stretch/Dockerfile#L50
 RUN set -ex \
   && for key in \
     6A010C5166006599AA17F08146C2130DFD2497F5 \
