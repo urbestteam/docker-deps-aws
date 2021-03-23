@@ -31,7 +31,7 @@ RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3; \
 RUN groupadd --gid 1000 node \
   && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
 
-ENV NODE_VERSION 13.0.0
+ENV NODE_VERSION 14.16.0
 
 # https://github.com/nodejs/docker-node/blob/910f8b1c0bdeee7bd464f0875297954bb86de9da/14/stretch/Dockerfile#L8
 RUN ARCH= && dpkgArch="$(dpkg --print-architecture)" \
