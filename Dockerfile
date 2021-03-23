@@ -20,8 +20,9 @@ RUN apt-get update; \
     # Install cypress dependencies
     xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 lsof \
     # Install jq
-    jq; \
-    curl -sS https://bootstrap.pypa.io/get-pip.py | python; \
+    jq;
+
+RUN curl -sS https://bootstrap.pypa.io/get-pip.py | python3; \
     # Install awscli
     pip install --upgrade pip; \
     pip install awscli --upgrade
