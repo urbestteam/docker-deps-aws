@@ -19,6 +19,8 @@ RUN apt-get update; \
     python3 python3-setuptools \
     # Install cypress dependencies
     xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 lsof \
+    # install build tools
+    build-essential \
     # Install jq
     jq;
 
