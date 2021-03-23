@@ -19,6 +19,8 @@ RUN apt-get update; \
     python3 python3-setuptools \
     # Install cypress dependencies
     xvfb libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2 lsof \
+    # install build tools
+    build-essential \
     # Install jq
     jq;
 
@@ -93,6 +95,8 @@ RUN set -ex \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarn /usr/local/bin/yarn \
   && ln -s /opt/yarn-v$YARN_VERSION/bin/yarnpkg /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
+  # smoke tests
+  && yarn --version
 
 # install docker
 ENV DOCKER_VERSION=17.06.0-ce
