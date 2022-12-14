@@ -1,7 +1,9 @@
 FROM clojure:temurin-17-tools-deps-1.11.1.1200-bullseye-slim
 
+# NOTE: jq is only needed for deploy-stage script on z-frontend
+# TODO: remove jq when deploy deploy-stage script is removed
 RUN apt-get update &&\
-    apt-get install curl unzip ca-certificates gnupg lsb-release build-essential -y
+    apt-get install curl unzip ca-certificates gnupg lsb-release build-essential jq -y
 
 # taken from https://docs.docker.com/engine/install/debian/
 RUN mkdir -p /etc/apt/keyrings &&\
